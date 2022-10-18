@@ -59,7 +59,7 @@ class GuzzleHttpAdapter implements AdapterInterface
     public function get($url, $options = array())
     {
         try {
-            $this->response = $this->client->get($this->endpoint.$url,$options);
+            $this->response = $this->client->request('GET', $this->endpoint.$url,$options);
 
         } catch (RequestException $e) {
             $this->response = $e->getResponse();
@@ -75,7 +75,7 @@ class GuzzleHttpAdapter implements AdapterInterface
     public function delete($url)
     {
         try {
-            $this->response = $this->client->delete($this->endpoint.$url);
+            $this->response = $this->client->request('DELETE', $this->endpoint.$url);
         } catch (RequestException $e) {
             $this->response = $e->getResponse();
             $this->handleError();
@@ -90,7 +90,7 @@ class GuzzleHttpAdapter implements AdapterInterface
     public function put($url, $content = '')
     {
         try {
-            $this->response = $this->client->put($this->endpoint.$url, $content);
+            $this->response = $this->client->request('PUT', $this->endpoint.$url, $content);
         } catch (RequestException $e) {
             $this->response = $e->getResponse();
             $this->handleError();
@@ -105,7 +105,7 @@ class GuzzleHttpAdapter implements AdapterInterface
     public function post($url, $content = '')
     {
         try {
-            $this->response = $this->client->post($this->endpoint.$url, $content);
+            $this->response = $this->client->request('POST', $this->endpoint.$url, $content);
         } catch (RequestException $e) {
             $this->response = $e->getResponse();
             $this->handleError();

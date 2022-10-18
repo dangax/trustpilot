@@ -1,5 +1,5 @@
 {
-    "name": "graphem/trustpilot",
+    "name": "dangax/trustpilot",
     "description": "Simple PHP library for TrustPilot API",
     "license": "MIT",
     "authors": [
@@ -9,11 +9,9 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.1",
+        "php": "^7.2.5 || ^8.0",
+        "guzzlehttp/guzzle": "^7.2",
         "nesbot/carbon": "^2.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "4.0.*"
     },
     "autoload": {
         "psr-4": {"TrustPilot\\": "src/TrustPilot"}
