@@ -147,7 +147,7 @@ class TrustPilot
     public function authorize()
     {
         $headers = ['headers' =>
-                        ['Authorization' => base64_encode($this->apiKey . ':' . $this->secret) ]
+                        ['Authorization' => 'Basic ' . base64_encode($this->apiKey . ':' . $this->secret) ]
                    ];
         $this->setAdapter($this->adapter,$headers);
         return new Authorize($this);
